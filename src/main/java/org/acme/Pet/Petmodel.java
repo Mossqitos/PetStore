@@ -1,8 +1,8 @@
-package org.acme.PetAPI;
+package org.acme.Pet;
 
 import java.util.List;
 
-public class Pet {
+public class Petmodel {
     private int id;
     private Category category;
     private String name;
@@ -10,10 +10,10 @@ public class Pet {
     private List<Tag> tags;
     private String status;
 
-    public Pet() {
+    public Petmodel() {
     }
 
-    public Pet(int id, Category category, String name, List<String> photoUrls, List<Tag> tags, String status) {
+    public Petmodel(int id, Category category, String name, List<String> photoUrls, List<Tag> tags, String status) {
         this.id = id;
         this.category = category;
         this.name = name;

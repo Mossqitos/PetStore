@@ -1,4 +1,4 @@
-package org.acme.PetAPI;
+package org.acme.Pet;
 
 public class Category {
     private int Cid;
