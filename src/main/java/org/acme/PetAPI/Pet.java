@@ -1,4 +1,4 @@
-package org.acme;
+package org.acme.PetAPI;
 
 import java.util.List;
 

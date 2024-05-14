@@ -1,4 +1,4 @@
-package org.acme;
+package org.acme.PetAPI;
 
 public class Tag {
 
