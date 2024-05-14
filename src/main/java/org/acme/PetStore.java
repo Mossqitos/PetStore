@@ -95,5 +95,18 @@ public class PetStore {
         return Response.ok(pet, MediaType.APPLICATION_JSON).build();
     }
 
+    //Delete pet
+    @DELETE
+    @Path("{id}")
+    public Response deletePet(@PathParam("id") int id) {
+        // Check if pet exists
+        if (!petsById.containsKey(id)) {
+            return Response.status(Response.Status.NOT_FOUND).entity("Pet not found.").build();
+        }
+
+        // Delete pet
+        Pet pet = petsById.remove(id);
+        return Response.ok(pet, MediaType.APPLICATION_JSON).build();
+    }
 
 }
