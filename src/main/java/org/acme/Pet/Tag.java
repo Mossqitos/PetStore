@@ -1,31 +1,24 @@
 package org.acme.Pet;
 
-public class Tag {
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 
-        private int Tid;
-        private String Tname;
+@Entity
+public class Tag extends PanacheEntity {
+    @Column
+    public int Tid;
+    @Column
+    public String Tname;
 
-        public Tag(int Tid, String Tname) {
-            this.Tid = Tid;
-            this.Tname = Tname;
-        }
-
-        public Tag() {
-        }
-        public int getTId() {
-            return Tid;
-        }
-
-        public void setTId(int Tid) {
-            this.Tid = Tid;
-        }
-
-        public String getTName() {
-            return Tname;
-        }
-
-        public void setTName(String Tname) {
-            this.Tname = Tname;
-        }
-    }
+    @ManyToOne
+    public Petmodel petmodel;
+//    public Tag(int Tid, String Tname) {
+//            this.Tid = Tid;
+//            this.Tname = Tname;
+//        }
+//        public Tag() {
+//        }
+}
 
