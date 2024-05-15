@@ -1,30 +1,26 @@
 package org.acme.Pet;
 
-public class Category {
-    private int Cid;
-    private String Cname;
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 
-    public Category() {
-    }
+import java.util.List;
 
-    public Category(int Cid, String Cname) {
-        this.Cid = Cid;
-        this.Cname = Cname;
-    }
+@Entity
+public class Category extends PanacheEntity{
+    @Column
+    public int Cid;
+    @Column
+    public String Cname;
 
-    public int getCId() {
-        return Cid;
-    }
-
-    public void setCId(int Cid) {
-        this.Cid = Cid;
-    }
-
-    public String getCName() {
-        return Cname;
-    }
-
-    public void setCName(String Cname) {
-        this.Cname = Cname;
-    }
+    @OneToMany(mappedBy = "category")
+    public List<Petmodel> petmodels;
+//    public Category() {
+//    }
+//
+//    public Category(int Cid, String Cname) {
+//        this.Cid = Cid;
+//        this.Cname = Cname;
+//    }
 }
